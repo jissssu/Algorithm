@@ -3,6 +3,7 @@ from collections import deque
 
 n = int(sys.stdin.readline())
 stack = deque()
+
 for i in range(n):
     word = sys.stdin.readline().split()
     if word[0] == 'push_front':
