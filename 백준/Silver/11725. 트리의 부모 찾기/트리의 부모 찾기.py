@@ -1,5 +1,7 @@
 import sys
 from collections import deque
+input = sys.stdin.readline
+
 
 N = int(sys.stdin.readline().strip())  
 tree = [[] for _ in range(N + 1)] 
