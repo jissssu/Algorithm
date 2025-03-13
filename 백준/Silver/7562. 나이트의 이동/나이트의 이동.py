@@ -1,8 +1,11 @@
+import sys
 from collections import deque
 
+input = sys.stdin.readline
 
 dx = [-2, -2, -1, -1, 1, 1, 2, 2]
 dy = [-1, 1, -2, 2, -2, 2, -1, 1]
+
 
 def bfs(n, bx, by, ax, ay):
     q = deque()
