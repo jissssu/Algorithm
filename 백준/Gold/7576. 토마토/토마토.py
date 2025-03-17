@@ -7,7 +7,6 @@ matrix = [list(map(int, input().split())) for _ in range(n)]
 queue = deque([])
 
 dx, dy = [-1, 1, 0, 0], [0, 0, -1, 1]
-# 정답이 담길 변수
 res = 0
 
 # queue에 처음에 받은 토마토의 위치 좌표를 append 시킨다
@@ -22,7 +21,6 @@ def bfs():
     while queue:
         # 처음 토마토 좌표 x, y에 꺼내고
         x, y = queue.popleft()
-        # 처음 토마토 사분면의 익힐 토마토들을 찾아본다.
         for i in range(4):
             nx, ny = dx[i] + x, dy[i] + y
             nx, ny = dx[i] + x, dy[i] + y
