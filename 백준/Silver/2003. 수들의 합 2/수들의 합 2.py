@@ -1,20 +1,14 @@
-N, M = map(int, input().split())
-nums = list(map(int, input().split()))
+n, m = map(int, input().split())
+numbers = list(map(int, input().split()))
 
-left = 0
-right = 0
-cnt = 0
-current_sum = 0
+count = 0
+for start in range(n):
+    total = 0
+    for end in range(start, n):
+        total += numbers[end]
+        if total == m:
+            count += 1
+        elif total > m:
+            break
 
-while right < N:
-    current_sum += nums[right]
-    right += 1
-    while current_sum > M and left < right:
-        current_sum -= nums[left]
-        left += 1
-
-   
-    if current_sum == M:
-        cnt += 1
-
-print(cnt)
+print(count)
