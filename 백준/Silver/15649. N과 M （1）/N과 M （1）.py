@@ -1,28 +1,21 @@
 import sys
-
 input = sys.stdin.readline
 
-n, m = map(int,input().split())
+n, m = map(int, input().split())
+visited = [False] * (n+1)
+sequence = []
 
-answer = []
-
-visited = [False]*(n+1)
-
-def dfs(numbers):
-    
-    if len(numbers) == m:
-        answer.append(numbers)
+def dfs():
+    if len(sequence) == m:
+        print(' '.join(map(str, sequence)))
         return
     
-    for i in range(1,n+1):
+    for i in range(1, n+1):
         if not visited[i]:
             visited[i] = True
-            dfs(numbers+[i])
+            sequence.append(i)
+            dfs()
             visited[i] = False
+            sequence.pop()
 
-dfs([])
-
-for ans in answer:
-    for n in ans:
-        print(n,end=" ")
-    print()
+dfs()
